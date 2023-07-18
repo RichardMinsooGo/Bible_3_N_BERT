@@ -260,31 +260,10 @@ tokenized_inputs      = SRC_tokenizer.texts_to_sequences(src_sentence)
 tokenized_outputs     = TRG_tokenizer.texts_to_sequences(trg_sentence)
 
 '''
-D13. [EDA] Explore the tokenized datasets
+D13. [Not Used] Explore the tokenized datasets
 '''
 
-len_result = [len(s) for s in tokenized_inputs]
 
-print('Maximum length of source : {}'.format(np.max(len_result)))
-print('Average length of source : {}'.format(np.mean(len_result)))
-
-plt.subplot(1,2,1)
-plt.boxplot(len_result)
-plt.subplot(1,2,2)
-plt.hist(len_result, bins=50)
-plt.show()
-
-
-len_result = [len(s) for s in tokenized_outputs]
-
-print('Maximum length of target : {}'.format(np.max(len_result)))
-print('Average length of target : {}'.format(np.mean(len_result)))
-
-plt.subplot(1,2,1)
-plt.boxplot(len_result)
-plt.subplot(1,2,2)
-plt.hist(len_result, bins=50)
-plt.show()
 
 '''
 D14. Build BERT Inputs, Outputs, Segments
@@ -378,6 +357,10 @@ M03. [PASS] Load datasets
 '''
 M04. Build Transformer model
 '''
+
+""" 
+C01. [Not Used] Sinusoid position encoding
+"""
 
 """
 C02. Scaled dot product attention
@@ -598,7 +581,15 @@ class Encoder(tf.keras.layers.Layer):
         # 6. Final layer's output is the encoder output
 
         return output  # (batch_size, input_seq_len, hid_dim)
+    
+"""
+C07. [Not Used] Decoder layer
+"""
         
+
+"""
+C08. [Not Used] Decoder
+"""
 # Model Define for Training
 """
 C09. Attention pad mask
